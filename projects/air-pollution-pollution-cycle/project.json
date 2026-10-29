@@ -1,0 +1,75 @@
+{
+  "slug": "air-pollution-pollution-cycle",
+  "title": "Air Pollution and the Atmospheric Pollution Cycle",
+  "subtitle": "Toxic Feedback Loops, Short-Lived Climate Pollutants, and the Compounding Health and Systemic Burdens in the Polycrisis Apocalypse",
+  "type": "report",
+  "series": "H Heuristics · Global Strategic Monograph Series · Polycrisis Series",
+  "status": "published",
+  "featured": true,
+  "date": "2026-10-29",
+  "dateLabel": "October 2026",
+  "authors": [
+    { "name": "Hunter Hughes", "role": "Founder & CEO", "org": "H Heuristics" }
+  ],
+  "org": {
+    "name": "H Heuristics",
+    "url": "https://hheuristics.com"
+  },
+  "description": "H Heuristics monograph on air pollution as a polycrisis force multiplier: toxic feedback loops, short-lived climate pollutants, and a 2040 clean-air roadmap.",
+  "abstract": "This 40-page strategic monograph reframes air pollution as the central transmission hub of the global polycrisis rather than a localized health externality. It traces the atmospheric pollution cycle across two destructive channels: direct biological toxicity from fine particulates and geophysical feedback from short-lived climate pollutants such as black carbon, methane, and tropospheric ozone. Across fourteen chapters, the analysis moves from PM2.5 physics and pulmonary pathology to household biomass combustion, wildfire megablazes, industrial point sources, transport non-exhaust emissions, crop toxicity, transboundary airsheds, and the macroeconomic toll on labor and human capital. The report closes with a phased 2026–2040 roadmap that prices the clean-air transition at $1.96 trillion and projects 38.2 million avoided mortalities.",
+  "keywords": [
+    "air pollution",
+    "PM2.5",
+    "short-lived climate pollutants",
+    "black carbon",
+    "tropospheric ozone",
+    "polycrisis",
+    "public health",
+    "clean air roadmap",
+    "atmospheric pollution cycle",
+    "H Heuristics"
+  ],
+  "tags": ["polycrisis", "air quality", "climate", "public health", "macroeconomics", "energy transition"],
+  "categories": ["Climate & Environment", "Public Health", "Macroeconomics"],
+  "language": "en",
+  "license": "Unrestricted Open Access · Institutional Standard",
+  "pages": 40,
+  "chapters": 14,
+  "exhibits": 18,
+  "tables": 6,
+  "citations": 32,
+  "figures": [
+    { "value": "8.9M", "caption": "premature deaths each year from ambient and household air pollution" },
+    { "value": "2.3B", "caption": "people still depend on polluting solid fuels for cooking and heating" },
+    { "value": "$8.1T", "caption": "annual welfare loss from PM2.5 exposure, above 6% of global GDP" },
+    { "value": "75%", "caption": "of global fine particulate emissions share sources with greenhouse warming" },
+    { "value": "$1.96T", "caption": "phased 2026–2040 capital requirement across six sectoral pillars" },
+    { "value": "38.2M", "caption": "avoided mortalities projected under the strategic roadmap to 2040" }
+  ],
+  "chapterOutline": [
+    { "chapter": "Chapter 01", "title": "The Executive Thesis: Air Pollution as a Polycrisis Force Multiplier", "focus": "Toxic Feedback Loops, Systemic Amplification & Planetary Health" },
+    { "chapter": "Chapter 02", "title": "Physics and Chemistry of Airborne Particulates", "focus": "Aerodynamic Diameters, Secondary Speciation & Atmospheric Residence" },
+    { "chapter": "Chapter 03", "title": "The Biological Battlefield: Respiratory, Vascular, and Neurological Assault", "focus": "Alveolar Translocation, Endothelial Shock & Cognitive Decline" },
+    { "chapter": "Chapter 04", "title": "Photochemical Smog and Tropospheric Ozone Dynamics", "focus": "VOC-NOx Non-Linearities, Solar Radiation & Thermal Smog Coupling" },
+    { "chapter": "Chapter 05", "title": "Household Air Pollution and the Indoor Biomass Crisis", "focus": "Solid Fuel Combustion, Cookstove Chemistry & Gendered Health Burdens" },
+    { "chapter": "Chapter 06", "title": "Short-Lived Climate Pollutants and the Climate-Pollution Feedback Loop", "focus": "Black Carbon Warming, Cryosphere Albedo & Sulfate Masking Dilemmas" },
+    { "chapter": "Chapter 07", "title": "Wildfire Megablazes and Extreme Smoke Injections", "focus": "Pyrocumulonimbus Plumes, Brown Carbon & Transcontinental Toxic Drift" },
+    { "chapter": "Chapter 08", "title": "Industrial Point Sources and Sectoral Decoupling Dilemmas", "focus": "Coal Combustion, Heavy Metal Smelting, Cement & Brick Kiln Emissions" },
+    { "chapter": "Chapter 09", "title": "Transportation, Heavy Diesel Effluents, and Non-Exhaust Emissions", "focus": "Internal Combustion Soot, Brake Friction & Tire Microplastics" },
+    { "chapter": "Chapter 10", "title": "Ecosystem Degradation, Crop Toxicity, and Food Insecurity", "focus": "Ozone Stomatal Necrosis, Yield Suppression & Acid Deposition Leaching" },
+    { "chapter": "Chapter 11", "title": "Transboundary Airshed Dynamics and Meteorological Trapping", "focus": "Planetary Boundary Layer Collapse, Thermal Inversions & Regional Haze" },
+    { "chapter": "Chapter 12", "title": "The Macroeconomic Toll: Labor Productivity, Healthcare, and Capital Drag", "focus": "Workplace Absenteeism, VSL Mortality Burdens & Human Capital Loss" },
+    { "chapter": "Chapter 13", "title": "Modern Telemetry, Satellite Remote Sensing, and Airshed Governance", "focus": "AOD Multi-Spectral Tracking, Ground Reference Grids & Airshed Treaties" },
+    { "chapter": "Chapter 14", "title": "Strategic Roadmap to 2040: Clean Air, Just Transitions, and Polycrisis Shielding", "focus": "Sectoral Phasing, Blended Finance, Technology Leapfrogging & Mandates" }
+  ],
+  "files": [
+    {
+      "path": "air-pollution-pollution-cycle.pdf",
+      "label": "Full monograph (PDF)",
+      "kind": "pdf",
+      "size": "2.9 MB"
+    }
+  ],
+  "external": [],
+  "bindingTerm": "Read every air quality problem as a two-channel system: first ask what it does to human biology, then ask what it does to the climate, and only then price the intervention. Clean air is the highest-return investment in the polycrisis because it pays out simultaneously in lives, labor, and atmospheric stability."
+}
