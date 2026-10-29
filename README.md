@@ -13,11 +13,12 @@ A publishing platform for H Heuristics research output: reports, dashboards, dat
 build.py                    # static-site generator (Python 3, stdlib)
 site/style.css              # editorial design system
 site/app.js                 # catalog filtering (vanilla JS)
+assets/                     # pre-rendered OG share images (committed)
 projects/<slug>/project.json  # metadata for ONE project (the source of truth)
 projects/<slug>/content.md    # optional rendered prose body
 projects/<slug>/<file>        # PDF / HTML / images referenced in project.json
+dist/                       # generated site (gitignored; Cloudflare builds it)
 projects.json               # generated machine-readable index (in dist/)
-dist/                       # generated site — committed so Pages can serve it directly
 new_project.py              # scaffolds a new project folder from the CLI
 ```
 
@@ -30,7 +31,7 @@ new_project.py              # scaffolds a new project folder from the CLI
    - the source file(s), copied with a URL-safe filename
 3. `python3 build.py` regenerates `dist/`.
 4. The agent verifies (HTML validity, internal links, JSON-LD parses, feeds parse, PDF present) and pushes to `main`.
-5. Cloudflare Pages rebuilds on push (or serves the committed `dist/` as-is).
+5. Cloudflare Pages runs `python3 build.py` on every push and deploys `dist/`.
 
 To scaffold the next project by hand:
 
@@ -83,7 +84,9 @@ python3 build.py --include-drafts
 | Build command | `python3 build.py` |
 | Build output directory | `dist` |
 
-The committed `dist/` also works with **no build command** if you just point the output directory at `dist`. `_headers` ships security headers, PDF caching, and CORS for `projects.json`.
+`dist/` is gitignored: Cloudflare runs the build on push, so the PDFs are stored once in the repo instead of being duplicated. `_headers` ships security headers, PDF caching, and CORS for `projects.json`.
+
+Pre-rendered Open Graph share images live in `assets/` and ship with the repo, so the Cloudflare build produces complete pages even without `matplotlib`. When the agent adds a project locally it also renders `assets/og-<slug>.png` (if matplotlib is available) and commits it.
 
 After the custom domain is known, update `SITE_URL` in `build.py` and rebuild — canonical URLs, sitemap, and JSON-LD all derive from it.
 

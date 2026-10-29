@@ -683,6 +683,14 @@ def build(include_drafts=False, check_only=False):
     DIST.mkdir(parents=True)
     (DIST / "assets").mkdir(parents=True)
 
+    # Pre-rendered assets (e.g. committed OG images) ship with the repo so the
+    # Cloudflare build works even when matplotlib is not installed there.
+    source_assets = ROOT / "assets"
+    if source_assets.exists():
+        for asset in source_assets.iterdir():
+            if asset.is_file():
+                shutil.copy2(asset, DIST / "assets" / asset.name)
+
     # Homepage
     home = base_page(
         title=f"{SITE_NAME} — {SITE_TAGLINE}",
@@ -701,6 +709,19 @@ def build(include_drafts=False, check_only=False):
     for i, p in enumerate(projects):
         prev_link = f"/projects/{projects[i - 1]['slug']}/" if i > 0 else ""
         next_link = f"/projects/{projects[i + 1]['slug']}/" if i < len(projects) - 1 else ""
+
+        # OG image: use a committed pre-rendered asset when present, otherwise
+        # generate locally with matplotlib (best effort; skipped if unavailable).
+        og_file = DIST / "assets" / f"og-{p['slug']}.png"
+        if not og_file.exists():
+            og_ok = make_og_image(p, og_file)
+            if not og_ok:
+                print(f"  ! og image skipped for {p['slug']} (matplotlib unavailable)")
+        og_meta = (
+            f'    <meta property="og:image" content="{SITE_URL}/assets/og-{p["slug"]}.png">\n'
+            f'    <meta name="twitter:image" content="{SITE_URL}/assets/og-{p["slug"]}.png">\n'
+        ) if og_file.exists() else ""
+
         page = base_page(
             title=f"{p['title']} — {SITE_NAME}",
             description=(p.get("description") or p.get("abstract") or "")[:160],
@@ -710,9 +731,8 @@ def build(include_drafts=False, check_only=False):
             og_type="article",
             nav_active=p["type"],
             extra_head=(
-                f'    <meta property="og:image" content="{SITE_URL}/assets/og-{p["slug"]}.png">\n'
-                f'    <meta name="twitter:image" content="{SITE_URL}/assets/og-{p["slug"]}.png">\n'
-                f'    <meta property="article:published_time" content="{esc(p["date"])}">\n'
+                og_meta
+                + f'    <meta property="article:published_time" content="{esc(p["date"])}">\n'
             ),
         )
         page_dir = DIST / "projects" / p["slug"]
@@ -724,9 +744,6 @@ def build(include_drafts=False, check_only=False):
             src = p["_dir"] / f["path"]
             if src.exists():
                 shutil.copy2(src, page_dir / f["path"])
-        og_ok = make_og_image(p, DIST / "assets" / f"og-{p['slug']}.png")
-        if not og_ok:
-            print(f"  ! og image skipped for {p['slug']} (matplotlib unavailable)")
         print(f"  ✓ projects/{p['slug']}/index.html")
 
     # 404
